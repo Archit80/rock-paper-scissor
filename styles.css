@@ -1,0 +1,179 @@
+/* Modern Responsive Rock Paper Scissors Game Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
+
+:root {
+    --color-primary: #3498db;
+    --color-secondary: #2ecc71;
+    --color-accent: #e74c3c;
+    --color-background: #f0f4f8;
+    --color-text: #2c3e50;
+    --gradient-primary: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    perspective: 1000px;
+    overflow-x: hidden;
+}
+
+.game-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-10px) scale(0.9);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#score {
+    display: flex;
+    justify-content: space-between;
+    background: var(--color-background);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-subtle);
+}
+
+#score div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+#score p {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#user-score-value, 
+#computer-score-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+.choices {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.choice {
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.choice:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: var(--shadow-medium);
+}
+
+.choice img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.choice span {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.msg-container {
+    background: var(--color-background);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: var(--shadow-subtle);
+}
+
+#message {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        width: 95%;
+        padding: 2rem 1rem;
+        transform: none;
+    }
+
+    .choices {
+        flex-direction: column;
+    }
+
+    .choice {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 1.5rem;
+    }
+
+    #score {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #score div {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .choice img {
+        width: 80px;
+        height: 80px;
+    }
+}

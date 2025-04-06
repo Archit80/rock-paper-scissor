@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Ultimate Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="Play the classic Rock Paper Scissors game with an exciting, modern twist!">
+    <meta name="keywords" content="rock paper scissors, game, online game, fun">
+    <meta name="author" content="Your Name">
+    <meta name="theme-color" content="#ff6b6b">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="game-container" role="main">
+        <header>
+            <h1>ROCK PAPER SCISSORS</h1>
+        </header>
+
+        <section id="score" aria-label="Game Scores">
+            <div class="player-score">
+                <p>Player: </p>
+                <span id="user-score-value" aria-live="polite">0</span>
+            </div>
+            <div class="computer-score">
+                <p>Computer: </p>
+                <span id="computer-score-value" aria-live="polite">0</span>
+            </div>
+        </section>
+
+        <section class="choices" aria-label="Game Choices">
+            <div id="ROCK" class="choice" role="button" tabindex="0" aria-label="Choose Rock">
+                <img src="images/rock.png" alt="Rock">
+                <span>Rock</span>
+            </div>
+            <div id="PAPER" class="choice" role="button" tabindex="0" aria-label="Choose Paper">
+                <img src="images/paper.png" alt="Paper">
+                <span>Paper</span>
+            </div>
+            <div id="SCISSORS" class="choice" role="button" tabindex="0" aria-label="Choose Scissors">
+                <img src="images/scissor.png" alt="Scissors">
+                <span>Scissors</span>
+            </div>
+        </section>
+
+        <section class="msg-container" aria-live="polite">
+            <p id="message">Play your move </p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
